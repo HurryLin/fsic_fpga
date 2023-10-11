@@ -20,7 +20,7 @@
 if { [info exists ::env(USER_DESIGN_FILE)] } {
       variable user_design_file $env(USER_DESIGN_FILE)
 } else {
-      variable user_design_file "user_proj_example.counter.v"
+      variable user_design_file "fsic.v"
 }
   
 # Check file required for this script exists
@@ -40,8 +40,28 @@ proc checkRequiredFiles { origin_dir} {
  "[file normalize "$origin_dir/vvd_srcs/caravel_soc/rtl/soc/mgmt_core_wrapper.v"]"\
  "[file normalize "$origin_dir/vvd_srcs/caravel_soc/rtl/soc/mprj_io.v"]"\
  "[file normalize "$origin_dir/vvd_srcs/caravel_soc/rtl/soc/caravel.v"]"\
- "[file normalize "$origin_dir/vvd_srcs/caravel_soc/rtl/user/$user_design_file"]"\
- "[file normalize "$origin_dir/vvd_srcs/caravel_soc/rtl/user/user_project_wrapper.v"]"\ 
+ "[file normalize "$origin_dir/vvd_srcs/caravel_soc/rtl/user/axilite_axis/rtl/axi_ctrl_logic.sv"]"\
+ "[file normalize "$origin_dir/vvd_srcs/caravel_soc/rtl/user/axilite_axis/rtl/axil_axis.sv"]"\
+ "[file normalize "$origin_dir/vvd_srcs/caravel_soc/rtl/user/axilite_axis/rtl/axilite_master.sv"]"\  
+ "[file normalize "$origin_dir/vvd_srcs/caravel_soc/rtl/user/axilite_axis/rtl/axilite_slave.sv"]"\    
+ "[file normalize "$origin_dir/vvd_srcs/caravel_soc/rtl/user/axilite_axis/rtl/axis_master.sv"]"\  
+ "[file normalize "$origin_dir/vvd_srcs/caravel_soc/rtl/user/axilite_axis/rtl/axis_slave.sv"]"\
+ "[file normalize "$origin_dir/vvd_srcs/caravel_soc/rtl/user/axis_switch/rtl/sw_caravel.v"]"\
+ "[file normalize "$origin_dir/vvd_srcs/caravel_soc/rtl/user/config_ctrl/rtl/config_ctrl.v"]"\
+ "[file normalize "$origin_dir/vvd_srcs/caravel_soc/rtl/user/fsic_clkrst/rtl/fsic_clkrst.v"]"\          
+ "[file normalize "$origin_dir/vvd_srcs/caravel_soc/rtl/user/io_serdes/rtl/fsic_coreclk_phase_cnt.v"]"\          
+ "[file normalize "$origin_dir/vvd_srcs/caravel_soc/rtl/user/io_serdes/rtl/fsic_io_serdes_rx.v"]"\
+ "[file normalize "$origin_dir/vvd_srcs/caravel_soc/rtl/user/io_serdes/rtl/io_serdes.v"]"\
+ "[file normalize "$origin_dir/vvd_srcs/caravel_soc/rtl/user/logic_analyzer/rtl/LogicAnalyzer.v"]"\
+ "[file normalize "$origin_dir/vvd_srcs/caravel_soc/rtl/user/logic_analyzer/rtl/Sram.v"]"\
+ "[file normalize "$origin_dir/vvd_srcs/caravel_soc/rtl/user/mprj_io/rtl/mprj_io.sv"]"\ 
+ "[file normalize "$origin_dir/vvd_srcs/caravel_soc/rtl/user/user_subsys/user_prj/rtl/user_prj0.v"]"\  
+ "[file normalize "$origin_dir/vvd_srcs/caravel_soc/rtl/user/user_subsys/user_prj/rtl/user_prj1.v"]"\  
+ "[file normalize "$origin_dir/vvd_srcs/caravel_soc/rtl/user/user_subsys/user_prj/rtl/user_prj2.v"]"\  
+ "[file normalize "$origin_dir/vvd_srcs/caravel_soc/rtl/user/user_subsys/user_prj/rtl/user_prj3.v"]"\  
+ "[file normalize "$origin_dir/vvd_srcs/caravel_soc/rtl/user/user_subsys/rtl/user_subsys.all.v"]"\  
+ "[file normalize "$origin_dir/vvd_srcs/caravel_soc/rtl/user/rtl/$user_design_file"]"\  
+ "[file normalize "$origin_dir/vvd_srcs/caravel_soc/rtl/user/rtl/user_project_wrapper.v"]"\ 
  "[file normalize "$origin_dir/vvd_srcs/caravel_soc/rtl/header/user_defines.v"]"\
  "[file normalize "$origin_dir/vvd_srcs/caravel_soc/rtl/header/defines.v"]"\ 
   ]
@@ -204,8 +224,28 @@ set files [list \
  [file normalize "${origin_dir}/vvd_srcs/caravel_soc/rtl/soc/mgmt_core_wrapper.v"] \
  [file normalize "${origin_dir}/vvd_srcs/caravel_soc/rtl/soc/mprj_io.v"] \
  [file normalize "${origin_dir}/vvd_srcs/caravel_soc/rtl/soc/caravel.v"] \
- [file normalize "${origin_dir}/vvd_srcs/caravel_soc/rtl/user/${user_design_file}"] \
- [file normalize "${origin_dir}/vvd_srcs/caravel_soc/rtl/user/user_project_wrapper.v"] \
+ [file normalize "${origin_dir}/vvd_srcs/caravel_soc/rtl/user/axilite_axis/rtl/axi_ctrl_logic.sv"] \
+ [file normalize "${origin_dir}/vvd_srcs/caravel_soc/rtl/user/axilite_axis/rtl/axil_axis.sv"] \
+ [file normalize "${origin_dir}/vvd_srcs/caravel_soc/rtl/user/axilite_axis/rtl/axilite_master.sv"] \
+ [file normalize "${origin_dir}/vvd_srcs/caravel_soc/rtl/user/axilite_axis/rtl/axilite_slave.sv"] \
+ [file normalize "${origin_dir}/vvd_srcs/caravel_soc/rtl/user/axilite_axis/rtl/axis_master.sv"] \
+ [file normalize "${origin_dir}/vvd_srcs/caravel_soc/rtl/user/axilite_axis/rtl/axis_slave.sv"] \
+ [file normalize "${origin_dir}/vvd_srcs/caravel_soc/rtl/user/axis_switch/rtl/sw_caravel.v"] \
+ [file normalize "${origin_dir}/vvd_srcs/caravel_soc/rtl/user/config_ctrl/rtl/config_ctrl.v"] \
+ [file normalize "${origin_dir}/vvd_srcs/caravel_soc/rtl/user/fsic_clkrst/rtl/fsic_clkrst.v"] \
+ [file normalize "${origin_dir}/vvd_srcs/caravel_soc/rtl/user/io_serdes/rtl/fsic_coreclk_phase_cnt.v"] \
+ [file normalize "${origin_dir}/vvd_srcs/caravel_soc/rtl/user/io_serdes/rtl/fsic_io_serdes_rx.v"] \
+ [file normalize "${origin_dir}/vvd_srcs/caravel_soc/rtl/user/io_serdes/rtl/io_serdes.v"] \
+ [file normalize "${origin_dir}/vvd_srcs/caravel_soc/rtl/user/logic_analyzer/rtl/LogicAnalyzer.v"] \
+ [file normalize "${origin_dir}/vvd_srcs/caravel_soc/rtl/user/logic_analyzer/rtl/Sram.v"] \
+ [file normalize "${origin_dir}/vvd_srcs/caravel_soc/rtl/user/mprj_io/rtl/mprj_io.sv"] \
+ [file normalize "${origin_dir}/vvd_srcs/caravel_soc/rtl/user/user_subsys/user_prj/rtl/user_prj0.v"] \
+ [file normalize "${origin_dir}/vvd_srcs/caravel_soc/rtl/user/user_subsys/user_prj/rtl/user_prj1.v"] \
+ [file normalize "${origin_dir}/vvd_srcs/caravel_soc/rtl/user/user_subsys/user_prj/rtl/user_prj2.v"] \
+ [file normalize "${origin_dir}/vvd_srcs/caravel_soc/rtl/user/user_subsys/user_prj/rtl/user_prj3.v"] \
+ [file normalize "${origin_dir}/vvd_srcs/caravel_soc/rtl/user/user_subsys/rtl/user_subsys.all.v"] \
+ [file normalize "${origin_dir}/vvd_srcs/caravel_soc/rtl/user/rtl/${user_design_file}"] \
+ [file normalize "${origin_dir}/vvd_srcs/caravel_soc/rtl/user/rtl/user_project_wrapper.v"] \
  [file normalize "${origin_dir}/vvd_srcs/caravel_soc/rtl/header/user_defines.v"] \
  [file normalize "${origin_dir}/vvd_srcs/caravel_soc/rtl/header/defines.v"] \
 ]
@@ -1572,7 +1612,7 @@ move_dashboard_gadget -name {methodology_1} -row 2 -col 1
 
 # Willy add for bitstream generated
 update_compile_order -fileset sources_1
-launch_runs impl_1 -to_step write_bitstream -job 16
+launch_runs impl_1 -to_step write_bitstream -job 3 
 wait_on_run impl_1
 
 # Open implemented design before executing below commands.
