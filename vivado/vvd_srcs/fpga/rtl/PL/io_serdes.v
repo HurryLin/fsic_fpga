@@ -74,14 +74,14 @@ module IO_SERDESz #(
 
 
 		//TX path
-		input wire 	[pDATA_WIDTH-1:0] as_is_tdata,
-		input wire 	[(pDATA_WIDTH/8)-1:0] as_is_tstrb,
-		input wire 	[(pDATA_WIDTH/8)-1:0] as_is_tkeep,
-		input wire 	as_is_tlast,
-		input wire 	[1:0] as_is_tid,
-		input wire 	as_is_tvalid,
-		input wire 	[1:0] as_is_tuser,
-		input wire 	as_is_tready,		//when local side axis switch Rxfifo size <= threshold then as_is_tready=0, this flow control mechanism is for notify remote side do not provide data with is_as_tvalid=1
+(* X_INTERFACE_IGNORE = "true" *) input wire 	[pDATA_WIDTH-1:0] as_is_tdata,
+(* X_INTERFACE_IGNORE = "true" *) input wire 	[(pDATA_WIDTH/8)-1:0] as_is_tstrb,
+(* X_INTERFACE_IGNORE = "true" *) input wire 	[(pDATA_WIDTH/8)-1:0] as_is_tkeep,
+(* X_INTERFACE_IGNORE = "true" *) input wire 	as_is_tlast,
+(* X_INTERFACE_IGNORE = "true" *) input wire 	[1:0] as_is_tid,
+(* X_INTERFACE_IGNORE = "true" *) input wire 	as_is_tvalid,
+(* X_INTERFACE_IGNORE = "true" *) input wire 	[1:0] as_is_tuser,
+(* X_INTERFACE_IGNORE = "true" *) input wire 	as_is_tready,		//when local side axis switch Rxfifo size <= threshold then as_is_tready=0, this flow control mechanism is for notify remote side do not provide data with is_as_tvalid=1
 
 		output wire		  serial_tclk,
 		output wire  [pSERIALIO_WIDTH-1: 0] serial_txd,
@@ -90,14 +90,14 @@ module IO_SERDESz #(
 		input  wire		  serial_rclk,
 		input  wire  [pSERIALIO_WIDTH-1: 0] serial_rxd,
 
-		output wire 	[pDATA_WIDTH-1:0] is_as_tdata,
-		output wire 	[(pDATA_WIDTH/8)-1:0] is_as_tstrb,
-		output wire 	[(pDATA_WIDTH/8)-1:0] is_as_tkeep,
-		output wire 	is_as_tlast,
-		output wire 	[1:0] is_as_tid,
-		output wire 	is_as_tvalid,
-		output wire 	[1:0] is_as_tuser,
-		output wire 	is_as_tready		//when remote side axis switch Rxfifo size <= threshold then is_as_tready=0, this flow control mechanism is for notify local side do not provide data with as_is_tvalid=1
+(* X_INTERFACE_IGNORE = "true" *) output wire 	[pDATA_WIDTH-1:0] is_as_tdata,
+(* X_INTERFACE_IGNORE = "true" *) output wire 	[(pDATA_WIDTH/8)-1:0] is_as_tstrb,
+(* X_INTERFACE_IGNORE = "true" *) output wire 	[(pDATA_WIDTH/8)-1:0] is_as_tkeep,
+(* X_INTERFACE_IGNORE = "true" *) output wire 	is_as_tlast,
+(* X_INTERFACE_IGNORE = "true" *) output wire 	[1:0] is_as_tid,
+(* X_INTERFACE_IGNORE = "true" *) output wire 	is_as_tvalid,
+(* X_INTERFACE_IGNORE = "true" *) output wire 	[1:0] is_as_tuser,
+(* X_INTERFACE_IGNORE = "true" *) output wire 	is_as_tready		//when remote side axis switch Rxfifo size <= threshold then is_as_tready=0, this flow control mechanism is for notify local side do not provide data with as_is_tvalid=1
 
 	);
 
